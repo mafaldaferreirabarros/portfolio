@@ -1,0 +1,426 @@
+* {
+  box-sizing: border-box;
+}
+
+/* comentário rápido Cmd + Shift + 7 */
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ---------------------BEGIN--------------------------- */
+/* ----------------------------------------------------- */
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --fs-tit: 1.3rem; /* h1 */
+  --fs-600: 1.5rem; /* h2 */
+  --fs-400: 0.9rem; /* h3 */
+  --fs-350: 1.2rem; /* h4 */
+  --fs-300: 1rem; /*(p)*/
+  --fs-200: 0.9rem; /*(a)*/
+  --rk: 0;
+}
+
+@font-face {
+  font-family: SaRegular;
+  src: url(fonts/BricolageGrotesque_24pt-Regular.ttf);
+}
+
+@font-face {
+  font-family: SaMedium;
+  src: url(fonts/BricolageGrotesque_24pt-Medium.ttf);
+}
+
+@font-face {
+  font-family: MoRegular;
+  src: url(fonts/ABCMonumentGroteskMono-Regular-Trial.otf);
+}
+
+@font-face {
+  font-family: Stefan;
+  src: url(fonts/ABCStefan-Bubble-Trial.otf);
+}
+
+body {
+  max-width: 3000px;
+  width: 100%;
+  margin: 0 auto;
+  cursor: url("images/cursor.png") 10 10, auto;
+}
+
+.alert {
+  display: none;
+}
+
+::selection {
+  color: red;
+}
+
+/*======== AREA 51 ============== */
+.idle-gif {
+  position: fixed;
+  max-width: 320px; /* control GIF size */
+  pointer-events: none; /* don’t block clicks */
+  z-index: 9999;
+  animation: fadeIn 0.5s ease;
+}
+
+/*======== AREA 51 ============== */
+
+/* ==== TYPE ===== */
+nav a.active {
+  color: red;
+}
+
+.contacts img:hover {
+  transform: rotate(-20deg);
+}
+
+a:hover {
+  color: red;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  cursor: url("images/cursor.png") 10 10, auto;
+}
+
+nav a {
+  font-family: MoRegular, monospace;
+  font-size: 0.8em;
+}
+
+.colab a {
+  font-family: "SaRegular", sans-serif;
+  font-size: 0.9em;
+}
+em {
+  font-family: MoRegular, monospace;
+  font-size: 0.8em;
+  text-transform: uppercase;
+}
+
+p,
+.numbertext {
+  font-size: 0.9em;
+  font-family: SaRegular, sans-serif;
+}
+
+/* ==== TYPE ===== */
+
+.sections {
+  width: 100%;
+  padding-top: 2.5em;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 20px;
+  padding: 0 1rem;
+}
+
+/* ====== NAV ======= */
+
+nav {
+  position: fixed;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  padding: 1rem 0;
+}
+.index {
+  grid-column: 1 / 4;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+}
+.logo {
+  grid-column: 6 / span 2;
+  justify-self: center;
+  width: 180px;
+}
+
+.contacts {
+  grid-column: 11/ 13;
+  text-align: right;
+}
+
+/* ==== END NAV ===== */
+
+/* ==== PROJECTS ===== */
+.info-details {
+  grid-column: span 2;
+}
+.size {
+  grid-column: span 1;
+}
+.info-tag {
+  grid-column: 7 / span 1;
+}
+
+.info-text {
+  grid-column: 8 / 13;
+}
+/* ==== SLIDER ==== */
+.mySlides1,
+.mySlides2 {
+  display: none;
+}
+img {
+  vertical-align: middle;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  margin: auto auto 3.5em auto;
+}
+
+.slideshow-container div,
+.slideshow-container p {
+  margin: auto;
+  grid-column: 4 / span 6;
+}
+
+.slideshow-container p {
+  position: absolute;
+  left: 0;
+  bottom: -30px;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: url("images/cursor.png") 10 10, auto;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 0 10em;
+  margin-top: -22px;
+  transition: 0.6s ease;
+  user-select: none;
+  z-index: 99;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #000;
+  position: absolute;
+  right: 0;
+  bottom: -30px;
+}
+
+/* medium font-weight CV */
+.med p {
+  font-family: SaMedium;
+}
+
+.work {
+  grid-column: 7/10;
+}
+.notwork {
+  grid-column: 10/13;
+}
+
+.work div,
+.notwork div {
+  padding-top: 20px;
+}
+
+.notwork > em:first-of-type + div {
+  padding-bottom: 40px;
+}
+
+.bio {
+  grid-column: 1/2;
+}
+
+.bio-text {
+  grid-column: 2/7;
+}
+
+#cv img {
+  margin: auto;
+  grid-column: 4 / span 6;
+}
+
+#cv {
+  margin-bottom: 5em;
+}
+
+/* Surpresa spans left half, no explicit row, so auto-placed after first row */
+.surpresa {
+  grid-column: 1 / span 6;
+  justify-self: start; /* align left inside its grid cell */
+  padding: 10px 0;
+  max-width: 100%; /* avoid overflow */
+}
+
+.surpresa:hover {
+  transform: rotate(-20deg);
+}
+
+/* Make sure surpresa image fits its container */
+.surpresa img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 850px) {
+  .alert {
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 60px;
+    text-align: center;
+    z-index: 100;
+    color: red;
+  }
+
+  p {
+    font-family: "Stefan", sans-serif;
+    padding: 0 1em;
+  }
+
+  body {
+    overflow: hidden;
+  }
+}
