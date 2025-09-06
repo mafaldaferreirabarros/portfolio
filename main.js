@@ -84,7 +84,7 @@ function showIdleGifs() {
       img.style.top = `${y}px`;
 
       document.body.appendChild(img);
-    }, i * 500);
+    }, i * 1000); // <<-- This means each new GIF is added every 1000 ms (1 second)
 
     gifTimeouts.push(timeoutID); // save timeout ID
   }
@@ -111,7 +111,7 @@ function resetIdleTimer() {
       isIdle = true;
       showIdleGifs();
     }
-  }, 10000);
+  }, 80000); // <<-- THIS is the idle time in ms (80,000 ms = 80 seconds)
 }
 
 // listen for user activity
